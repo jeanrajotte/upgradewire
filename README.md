@@ -188,7 +188,7 @@ Hopefully, the above reads like a configuration file that can use functionality 
 
 ## <a name='api'></a>API 
 
-Look at the [source](https://github.com/jeanrajotte/upgradewire/blob/master/upgraderwire.php) to learn. I can just see this section getting stale quickly as I'll lag documenting the moving target... 
+Look at the [source](https://github.com/jeanrajotte/upgradewire/blob/master/upgradewire.php) to learn. I can just see this section getting stale quickly as I'll lag documenting the moving target... 
 
 
 Enjoy!
