@@ -417,10 +417,10 @@ class Upgrader {
 	/////////// start from scratch
 
 	// brutally remove pages, templates, and fields that are not 
-	// with the templates listed herein, and those additionally provided 
+	// related to the templates listed herein, and those additionally provided 
 	// in the argument
 	public function reset( $extraExcluded = array()) {
-		// remove all pages but those that use the except templates
+		// remove all pages but those that use the excluded templates
 		// work the page tree from home
 		// don't touch the admin branch
 		$templatesExcluded = array_merge(
@@ -435,7 +435,7 @@ class Upgrader {
 				'permission', 
 				'role', 
 				'user'),
-			$extraExcluded );
+			$extraExcluded);
 		$excluded = implode('|', array_map( 'trim', $templatesExcluded));
 		foreach(wire('pages')->get('/')->children("include=all,template.name!={$excluded}") as $p) {
 			wire('pages')->delete( $p, true );
@@ -455,7 +455,7 @@ class Upgrader {
 			wire('fieldgroups')->___delete( $fg );
 		}
 
-		// fields
+		// unused fields
 		foreach(wire('fields') as $fld) {
 			if ($fld->numFieldgroups()===0) {
 				$this->log( "deleting field: {$fld}", true);
