@@ -31,6 +31,8 @@
 *
 */
 
+// place this file in /site/versions/  or whatever name you choose.
+
 // bootstrap pw
 include('../../index.php');
 
