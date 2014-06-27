@@ -32,9 +32,9 @@ ProcessWire (PW) is great! It's a lightweight CMS with a simple but powerful API
 
 Like most CMS's, it keeps its structures and its contents in a database and provides an administrative backend to create and maintain both.  This is sweet and simple for a single installation of a site, being maintained by a single developer.  However, in a more complex application and development environment, possibly with several developers and/or with a development/staging/production deployment scheme, keeping the structure in the same medium as the content can be problematic.
 
-My simple solution is to treat the structure as source code and be specific about versioning changes.  This enables one to version control the upgrade path, so more than one developer can work together usnig the usual source management tools. This helps not clobber your customer's data when upgrading the live site, where as a developer you're concerned with structure, not content. And it documents the data model of the application in text files, instead of having it buried in the PW administrative UI, requiring multiple point and click steps across the menu system and config pages.
+My simple solution is to treat the structure as source code and be specific about versioning changes.  This enables one to version control the upgrade path, so more than one developer can work together using the usual source management tools. This helps not clobber your customer's data when upgrading the live site -- as a developer you're concerned with structure, not content. Also, it documents the data model of the application in text files, instead of having it buried in the PW administrative UI, requiring multiple point-and-click steps across the menu system and config pages.
 
-The last point is an important one to me.  The administrative backend of any CMS makes complete sense to me for content creation, holding the hand of the site's editors/writers. PW has a very sweet tree metaphor that makes this task intuitively clear for the users.  However, mixing in there the development of the structure, at first blush, is useful, but to me not industrial-solid-like. It turns the backend into a kitchen sink, making all editing of the model a series of jumps between menu items and tab pages. Old school _moi_, I'd rather work from text files for the maintenance of the model, if the configuration language is neat enough. What I have here is far from neatness Nirvana -- it's more functional than configuration-style, but it reads well enough and it is easy to document.
+The last point is an important one to me.  The administrative backend of any CMS makes complete sense to me for content creation, holding the hand of the site's editors/writers. PW has a very sweet tree metaphor that makes this task intuitively clear for the users.  However, mixing into this the development of the structure, at first blush, is useful, but to me not industrial-solid-like. It turns the backend into a kitchen sink, making all editing of the model a series of jumps between menu items and tab pages. Old school _moi_, I'd rather work from text files for the maintenance of the model, if the configuration language is neat enough. What I have here is far from neatness Nirvana -- it's more functional than configuration-style, but it reads well enough and it is easy to document.
 
 ### <a name="yeah-but"></a>Yeah But
 
@@ -141,7 +141,7 @@ Here's an example of a configuration (version) file, named 00\_01\_00.php.  Its 
 		// link template family.
 
 		// this is neat: create the hierarchies of templates that control the 
-		// shape of the page trees.
+		// shape of the pages tree.
 
 		$upgrader->setParentage( array( 'home', 'cities', 'city', 'spaces', 'space'));
 		$upgrader->setParentage( array( 'home', 'tags', 'tag'));
@@ -188,7 +188,7 @@ Hopefully, the above reads like a configuration file that can use functionality 
 
 ## <a name='api'></a>API 
 
-Look at the [source](https://github.com/jeanrajotte/upgradewire/blob/master/upgradewire.php) to learn. I can just see this section getting stale quickly as I'll lag documenting the moving target... 
+Look at the [source](https://github.com/jeanrajotte/upgradewire/blob/master/upgradewire.php) to learn. If I were to document the API here, it would get stale quickly... 
 
 
 Enjoy!
